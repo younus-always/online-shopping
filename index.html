@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-40">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Left Side: Logo -->
+        <div class="flex items-center">
+          <img
+            src="./assets/online-shopping.png"
+            alt="Logo"
+            class="w-10 h-10"
+          />
+          <span class="ml-3 text-xl font-semibold">Online Shopping</span>
+        </div>
+
+        <!-- Right Side: Button, Cart, Avatar -->
+        <div class="flex items-center space-x-4">
+          <button
+            id="sign-in"
+            class="hidden sm:block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition"
+          >
+            Sign In
+          </button>
+          <div id="open-cart-total" class="relative">
+            <button
+              class="bg-gray-200 p-2 rounded-full hover:bg-gray-300 transition"
+            >
+              <img src="./assets/trolley.png" class="w-6 h-6" alt="trolley" />
+            </button>
+            <span
+              id="count"
+              class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1"
+              >0</span
+            >
+            <!-- Cart total -->
+            <div
+              id="cartTotal"
+              class="hidden absolute min-w-72 -bottom-56 -right-2 z-10 border border-gray-200 bg-white p-4 rounded-lg"
+            >
+              <p class="w-16 h-16 mx-auto">
+                <img src="./assets/buy.gif" alt="buy now gif" />
+              </p>
+              <p class="mt-1 font-semibold text-gray-600 text-lg">
+                Added Items: <span id="items">0</span>
+              </p>
+              <p class="my-2 font-semibold text-gray-500">
+                Subtotal: $<span id="subtotal">00.00</span>
+              </p>
+              <button
+                id="buy-now"
+                class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
+          <img
+            src="./assets/man.png"
+            alt="User Avatar"
+            class="w-10 h-10 rounded-full"
+          />
+        </div>
+      </div>
+      <button
+        id="sign-in2"
+        class="block sm:hidden shadow-md bg-blue-600 text-white px-4 py-2 hover:bg-blue-500 transition absolute left-0 -bottom-10 w-full"
+      >
+        Sign In
+      </button>
+    </nav>
+
+    <!-- Main Section with Shopping Cards -->
+    <section class="container mx-auto mt-14 sm:mt-8 p-4">
+      <!-- Sign In -->
+      <div
+        id="sign-in-form"
+        class="hidden border rounded-lg max-w-96 shadow-lg mx-auto"
+      >
+        <div class="flex flex-col justify-center px-8 py-10">
+          <div>
+            <img
+              class="mx-auto h-14 w-auto"
+              src="./assets/online-shopping.png"
+              alt="Your Company"
+            />
+            <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">
+              Sign in to your account
+            </h2>
+          </div>
+          <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <form class="space-y-6" action="#" method="POST">
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium leading-6 text-gray-900"
+                  >Email address</label
+                >
+                <div class="mt-2">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    class="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-700"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between">
+                  <label
+                    for="password"
+                    class="block text-sm font-medium leading-6 text-gray-900"
+                    >Password</label
+                  >
+                  <div class="text-sm">
+                    <a
+                      href="#"
+                      class="font-semibold text-indigo-600 hover:text-indigo-500"
+                      >Forgot password?</a
+                    >
+                  </div>
+                </div>
+                <div class="mt-2">
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Sign in
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      ></div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
